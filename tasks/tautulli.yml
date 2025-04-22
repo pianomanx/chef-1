@@ -1,0 +1,15 @@
+---
+- name: DOCKER - Tautulli
+  docker_container:
+    name: tautulli
+    image: linuxserver/tautulli
+    memory: 256M
+    memory_swap: unlimited
+    env:
+      PGID: "65534"
+      PUID: "65534"
+    volumes:
+      - /opt/config/tautulli:/config:rw
+      - "/opt/config/plex/Library/Application Support/Plex Media Server/Logs:/logs"
+    restart_policy: always
+...

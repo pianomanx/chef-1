@@ -1,0 +1,11 @@
+---
+- name: DOCKER - MakeMKV
+  docker_container:
+    name: makemkv
+    image: jlesage/makemkv
+    volumes:
+      - /opt/config/makemkv:/config:rw
+      - /data/shares/Media:/output:rw
+      - /data/shares/Downloads:/storage:rw
+    restart_policy: always
+...

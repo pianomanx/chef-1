@@ -1,0 +1,24 @@
+---
+- name: DOCKER - Nginx
+  docker_container:
+    name: nginx
+    image: nginx
+    memory: 512M
+    memory_swap: unlimited
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - openvpn-client:lidarr
+      - openvpn-client:radarr
+      - openvpn-client:nzbget
+      - openvpn-client:sonarr
+      - openvpn-client:qbittorrent
+      - makemkv:makemkv
+      - tautulli:tautulli
+    volumes:
+      - /opt/config/nginx:/etc/nginx:rw
+      - /data/shares/Code:/code:rw
+      - /data/shares/Downloads:/downloads:rw
+    restart_policy: always
+...

@@ -1,0 +1,59 @@
+---
+- name: "Do All the Things"
+  hosts: localhost
+  connection: local
+
+  roles:
+  - role: arillso.sshd
+    ssh_allow_root_with_key: "no"
+    ssh_server_password_login: false
+    ssh_server_ports: ['1471']
+    ssh_use_dns: false
+
+  - role: geerlingguy.ntp
+    ntp_timezone: "America/New_York"
+    ntp_area: "North America"
+
+  tasks:
+  - name: SYSTEM - Install zsh
+    package:
+      name: zsh
+      state: present
+
+  - name: SYSTEM - Create 'skingry' user
+    user:
+      name: "skingry"
+      state: present
+      comment: "Seth Kingry"
+      uid: "1000"
+      groups: "adm"
+      create_home: true
+      home: "/home/skingry"
+      shell: "/bin/zsh"
+
+  - name: SYSTEM - Set authorized key for 'skingry'
+    authorized_key:
+      user: "skingry"
+      state: present
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFBcaNsSurXN+NspTB1w+KAeSlhka/KVPLCLU/0bUiYZ skingry@carbon"
+
+  - name: SYSTEM - Allow passwordless sudo for 'adm' group
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^admin'
+      line: '%adm ALL=(ALL) NOPASSWD:ALL'
+      validate: '/usr/sbin/visudo -cf %s'
+
+  - import_tasks: ./tasks/openvpn-client.yml
+  - import_tasks: ./tasks/nzbget.yml
+  - import_tasks: ./tasks/lidarr.yml
+  - import_tasks: ./tasks/qbittorrent.yml
+  - import_tasks: ./tasks/radarr.yml
+  - import_tasks: ./tasks/sonarr.yml
+  - import_tasks: ./tasks/samba.yml
+  - import_tasks: ./tasks/makemkv.yml
+  - import_tasks: ./tasks/plex.yml
+  - import_tasks: ./tasks/tautulli.yml
+  - import_tasks: ./tasks/nginx.yml
+...

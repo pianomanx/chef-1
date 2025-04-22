@@ -1,0 +1,16 @@
+---
+- name: DOCKER - NZBGet
+  docker_container:
+    name: nzbget
+    image: linuxserver/nzbget
+    memory: 512M
+    memory_swap: unlimited
+    network_mode: container:openvpn-client
+    env:
+      PGID: "65534"
+      PUID: "65534"
+    volumes:
+      - /opt/config/nzbget:/config:rw
+      - /data/shares/Downloads:/downloads:rw
+    restart_policy: always
+...

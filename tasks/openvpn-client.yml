@@ -1,0 +1,19 @@
+---
+- name: DOCKER - OpenVPN Client
+  docker_container:
+    name: openvpn-client
+    image: dperson/openvpn-client
+    memory: 16M
+    memory_swap: unlimited
+    capabilities:
+      - net_admin
+    devices:
+      - /dev/net/tun:/dev/net/tun:rwm
+    dns_servers:
+      - 8.8.8.8
+      - 8.8.4.4
+    volumes:
+      - /opt/config/openvpn/client:/vpn:ro
+    privileged: true
+    restart_policy: always
+...

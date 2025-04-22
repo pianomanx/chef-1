@@ -1,0 +1,17 @@
+---
+- name: DOCKER - Lidarr
+  docker_container:
+    name: lidarr
+    image: linuxserver/lidarr
+    memory: 512M
+    memory_swap: unlimited
+    network_mode: container:openvpn-client
+    env:
+      PGID: "65534"
+      PUID: "65534"
+    volumes:
+      - /opt/config/lidarr:/config:rw
+      - /data/shares/Media/Music:/music:rw
+      - /data/shares/Downloads:/downloads:rw
+    restart_policy: always
+...
