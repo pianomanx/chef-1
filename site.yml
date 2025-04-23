@@ -20,25 +20,6 @@
       name: zsh
       state: present
 
-  - name: SYSTEM - Create 'skingry' user
-    user:
-      name: "skingry"
-      state: present
-      comment: "Seth Kingry"
-      uid: "1000"
-      groups:
-      - "adm"
-      - "docker"
-      create_home: true
-      home: "/home/skingry"
-      shell: "/bin/zsh"
-
-  - name: SYSTEM - Set authorized key for 'skingry'
-    authorized_key:
-      user: "skingry"
-      state: present
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFBcaNsSurXN+NspTB1w+KAeSlhka/KVPLCLU/0bUiYZ skingry@carbon"
-
   - name: SYSTEM - Allow passwordless sudo for 'adm' group
     lineinfile:
       path: /etc/sudoers
@@ -47,6 +28,7 @@
       line: '%adm ALL=(ALL) NOPASSWD:ALL'
       validate: '/usr/sbin/visudo -cf %s'
 
+  - import_tasks: ./tasks/setup_users.yml
   - import_tasks: ./tasks/cronjobs.yml
   - import_tasks: ./tasks/openvpn-client.yml
   - import_tasks: ./tasks/nzbget.yml
