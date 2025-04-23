@@ -4,5 +4,20 @@
     name: Certbot Certificate Renewal
     minute: "0"
     hour: "3"
-    job: "docker run --rm -v '/opt/config/nginx/ssl:/config' -v '/opt/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew > /var/log/certbot.log"
+    job: "docker run --rm -v '/opt/config/nginx/ssl:/config' -v '/opt/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew >> /var/log/certbot.log"
+
+- name: CRON - Restart Nginx
+  cron:
+    name: Restart Nginx
+    minute: "15"
+    hour: "3"
+    job: "docker stop nginx && docker start nginx >> /var/log/certbot.log"
+
+- name: CRON - Backup
+  cron:
+    name: Backup
+    minute: "0"
+    hour: "4"
+    day: "1"
+    job: "docker run --rm -v '/data:/data' -v '/opt/config/backup/backup.sh:/usr/sbin/backup' base backup > /var/log/backup.log"
 ...
