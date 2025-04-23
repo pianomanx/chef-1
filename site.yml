@@ -26,7 +26,9 @@
       state: present
       comment: "Seth Kingry"
       uid: "1000"
-      groups: "adm"
+      groups:
+      - "adm"
+      - "docker"
       create_home: true
       home: "/home/skingry"
       shell: "/bin/zsh"
