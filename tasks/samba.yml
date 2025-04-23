@@ -1,0 +1,15 @@
+---
+- name: DOCKER - Samba
+  docker_container:
+    name: samba
+    image: dockurr/samba
+    memory: 512M
+    memory_swap: unlimited
+    network_mode: host
+    env:
+      NMBD: "true"
+    volumes:
+      - /data/shares:/shares:rw
+      - /opt/config/samba/smb.conf:/etc/samba/smb.conf:rw
+    restart_policy: always
+...

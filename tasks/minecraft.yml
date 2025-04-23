@@ -1,0 +1,17 @@
+---
+- name: DOCKER - Minecraft
+  docker_container:
+    name: minecraft
+    image: itzg/minecraft-server
+    memory: 8192M
+    memory_swap: unlimited
+    network_mode: host
+    env:
+      GID: "65534"
+      UID: "65534"
+      EULA: "true"
+      MEMORY: "8G"
+    volumes:
+      - /opt/config/minecraft:/data:rw
+    restart_policy: always
+...
