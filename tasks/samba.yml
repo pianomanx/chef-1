@@ -11,5 +11,6 @@
     volumes:
       - /data/shares:/shares:rw
       - /opt/config/samba/smb.conf:/etc/samba/smb.conf:rw
+      - /opt/config/samba/users.conf:/etc/samba/users.conf:rw
     restart_policy: always
 ...
