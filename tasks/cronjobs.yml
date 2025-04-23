@@ -1,0 +1,8 @@
+---
+- name: CRON - Certbot Certficate Renewal
+  cron:
+    name: Certbot Certificate Renewal
+    minute: "0"
+    hour: "3"
+    job: "docker run --rm -v '/opt/config/nginx/ssl:/config' -v '/opt/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew > /var/log/certbot.log"
+...

@@ -45,6 +45,7 @@
       line: '%adm ALL=(ALL) NOPASSWD:ALL'
       validate: '/usr/sbin/visudo -cf %s'
 
+  - import_tasks: ./tasks/cronjobs.yml
   - import_tasks: ./tasks/openvpn-client.yml
   - import_tasks: ./tasks/nzbget.yml
   - import_tasks: ./tasks/lidarr.yml
