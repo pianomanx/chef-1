@@ -54,6 +54,7 @@
   - import_tasks: ./tasks/samba.yml
   - import_tasks: ./tasks/makemkv.yml
   - import_tasks: ./tasks/plex.yml
+  - import_tasks: ./tasks/minecraft.yml
   - import_tasks: ./tasks/tautulli.yml
   - import_tasks: ./tasks/nginx.yml
 ...
