@@ -3,6 +3,7 @@
   docker_container:
     name: radarr
     image: linuxserver/radarr
+    pull: "always"
     memory: 512M
     memory_swap: unlimited
     network_mode: container:openvpn-client

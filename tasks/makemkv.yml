@@ -3,6 +3,7 @@
   docker_container:
     name: makemkv
     image: jlesage/makemkv
+    pull: "always"
     volumes:
       - /opt/config/makemkv:/config:rw
       - /data/shares/Media:/output:rw

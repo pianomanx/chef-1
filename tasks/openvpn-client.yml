@@ -3,6 +3,7 @@
   docker_container:
     name: openvpn-client
     image: dperson/openvpn-client
+    pull: "always"
     memory: 16M
     memory_swap: unlimited
     capabilities:

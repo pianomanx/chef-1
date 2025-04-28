@@ -3,6 +3,7 @@
   docker_container:
     name: nginx
     image: nginx
+    pull: "always"
     memory: 512M
     memory_swap: unlimited
     ports:

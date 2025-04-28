@@ -3,6 +3,7 @@
   docker_container:
     name: tautulli
     image: linuxserver/tautulli
+    pull: "always"
     memory: 256M
     memory_swap: unlimited
     env:

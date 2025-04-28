@@ -3,6 +3,7 @@
   docker_container:
     name: qbittorrent
     image: linuxserver/qbittorrent
+    pull: "always"
     memory: 512M
     memory_swap: unlimited
     network_mode: container:openvpn-client
