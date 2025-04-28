@@ -1,0 +1,6 @@
+---
+- name: DOCKER - Build 'base' image
+  docker_image_build:
+    name: base:latest
+    path: /opt/config/ansible/dockerfiles/base
+...
