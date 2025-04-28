@@ -10,9 +10,14 @@
     ssh_server_ports: ['1471']
     ssh_use_dns: false
 
-  - role: geerlingguy.ntp
-    ntp_timezone: "America/New_York"
-    ntp_area: "North America"
+  - role: stuvusIT.systemd-timesyncd
+    timesync_timezone: America/New_York
+    timesync_write_hwclock_on_change: false
+    timesync_ntp_hosts:
+      - 0.north-america.pool.ntp.org
+      - 1.north-america.pool.ntp.org
+      - 2.north-america.pool.ntp.org
+      - 3.north-america.pool.ntp.org
 
   tasks:
   - name: SYSTEM - Install zsh
