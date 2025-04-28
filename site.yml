@@ -42,4 +42,5 @@
   - import_tasks: ./tasks/minecraft.yml
   - import_tasks: ./tasks/tautulli.yml
   - import_tasks: ./tasks/nginx.yml
+  - import_tasks: ./tasks/prune.yml
 ...
