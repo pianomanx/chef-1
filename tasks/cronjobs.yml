@@ -1,4 +1,9 @@
 ---
+- name: DOCKER - Certbot Image
+  docker_image:
+    name: certbot/dns-route53:latest
+    source: pull
+
 - name: CRON - Certbot Certficate Renewal
   cron:
     name: Certbot Certificate Renewal
