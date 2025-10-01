@@ -11,7 +11,7 @@
       PGID: "65534"
       PUID: "65534"
     volumes:
-      - /opt/config/radarr:/config:rw
+      - /data/config/radarr:/config:rw
       - /data/shares/Media:/media:rw
       - /data/shares/Downloads:/downloads:rw
     restart_policy: always

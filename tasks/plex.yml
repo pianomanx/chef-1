@@ -16,7 +16,7 @@
       - /dev/dri/card1:/dev/dri/card1:rwm
       - /dev/dri/renderD128:/dev/dri/renderD128:rwm
     volumes:
-      - /opt/config/plex:/config:rw
+      - /data/config/plex:/config:rw
       - /data/shares/Media:/media:rw
       - /tmp:/tmp:rw
     restart_policy: always

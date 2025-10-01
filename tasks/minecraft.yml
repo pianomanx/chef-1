@@ -14,6 +14,6 @@
       UID: "65534"
       EULA: "true"
     volumes:
-      - /opt/config/minecraft:/data:rw
+      - /data/config/minecraft:/data:rw
     restart_policy: always
 ...

@@ -3,7 +3,7 @@
   docker_image:
     name: base
     build:
-      path: /opt/config/ansible/dockerfiles/base
+      path: /data/config/ansible/dockerfiles/base
     tag: latest
     source: build
 ...

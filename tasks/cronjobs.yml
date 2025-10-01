@@ -9,7 +9,7 @@
     name: Certbot Certificate Renewal
     minute: "0"
     hour: "3"
-    job: "docker run --rm -v '/opt/config/nginx/ssl:/config' -v '/opt/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew >> /var/log/certbot.log"
+    job: "docker run --rm -v '/data/config/nginx/ssl:/config' -v '/data/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew >> /var/log/certbot.log"
 
 - name: CRON - Restart Nginx
   cron:
@@ -24,12 +24,12 @@
     minute: "0"
     hour: "4"
     day: "1"
-    job: "docker run --rm -v '/data:/data' -v '/opt/config/backup/backup.sh:/usr/sbin/backup' base backup > /var/log/backup.log"
+    job: "docker run --rm -v '/data:/data' -v '/data/config/backup/backup.sh:/usr/sbin/backup' base backup > /var/log/backup.log"
 
 - name: CRON - Plex Cleaner
   cron:
     name: Plex Cleaner
     minute: "30"
     hour: "3"
-    job: "docker run --rm -v '/opt/config/plex-cleaner:/plex-cleaner' -v '/data/shares/Media:/media' base /plex-cleaner/PlexCleaner.py >> /dev/null"
+    job: "docker run --rm -v '/data/config/plex-cleaner:/plex-cleaner' -v '/data/shares/Media:/media' base /plex-cleaner/PlexCleaner.py >> /dev/null"
 ...
