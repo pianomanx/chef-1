@@ -5,7 +5,7 @@
     image: jlesage/makemkv
     pull: "always"
     volumes:
-      - /data/config/makemkv:/config:rw
+      - /opt/config/makemkv:/config:rw
       - /data/shares/Media:/output:rw
       - /data/shares/Downloads:/storage:rw
     restart_policy: always

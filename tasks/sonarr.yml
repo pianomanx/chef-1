@@ -11,7 +11,7 @@
       PGID: "65534"
       PUID: "65534"
     volumes:
-      - /data/config/sonarr:/config:rw
+      - /opt/config/sonarr:/config:rw
       - /data/shares/Media/TV:/tv:rw
       - /data/shares/Media/TV_Children:/children:rw
       - /data/shares/Downloads:/downloads:rw

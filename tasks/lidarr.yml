@@ -11,7 +11,7 @@
       PGID: "65534"
       PUID: "65534"
     volumes:
-      - /data/config/lidarr:/config:rw
+      - /opt/config/lidarr:/config:rw
       - /data/shares/Media/Music:/music:rw
       - /data/shares/Downloads:/downloads:rw
     restart_policy: always

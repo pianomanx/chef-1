@@ -14,7 +14,7 @@
       - 8.8.8.8
       - 8.8.4.4
     volumes:
-      - /data/config/openvpn/client:/vpn:ro
+      - /opt/config/openvpn/client:/vpn:ro
     privileged: true
     restart_policy: always
 ...

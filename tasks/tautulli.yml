@@ -10,7 +10,7 @@
       PGID: "65534"
       PUID: "65534"
     volumes:
-      - /data/config/tautulli:/config:rw
-      - "/data/config/plex/Library/Application Support/Plex Media Server/Logs:/logs"
+      - /opt/config/tautulli:/config:rw
+      - "/opt/config/plex/Library/Application Support/Plex Media Server/Logs:/logs"
     restart_policy: always
 ...
