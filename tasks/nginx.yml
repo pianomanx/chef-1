@@ -19,7 +19,6 @@
       - tautulli:tautulli
     volumes:
       - /opt/config/nginx:/etc/nginx:rw
-      - /data/shares/Code:/code:rw
       - /data/shares/Downloads:/downloads:rw
     restart_policy: always
 ...
