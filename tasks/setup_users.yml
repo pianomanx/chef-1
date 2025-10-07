@@ -4,10 +4,9 @@
     name: "skingry"
     state: present
     comment: "Seth Kingry"
-    uid: "1000"
     groups:
-    - "adm"
     - "docker"
+    - "sudo"
     create_home: true
     home: "/home/skingry"
     shell: "/bin/zsh"
