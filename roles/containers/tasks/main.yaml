@@ -209,14 +209,6 @@
       - /data/shares/Downloads:/downloads:rw
     restart_policy: always
 
-- name: base
-  docker_image:
-    name: base
-    build:
-      path: /opt/config/ansible/dockerfiles/base
-    tag: latest
-    source: build
-
 - name: plex-cleaner
   docker_container:
     name: plex-cleaner

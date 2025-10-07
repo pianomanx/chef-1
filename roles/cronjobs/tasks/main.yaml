@@ -11,11 +11,3 @@
     minute: "15"
     hour: "3"
     job: "docker stop nginx && docker start nginx >> /var/log/certbot.log"
-
-- name: Backup
-  cron:
-    name: Backup
-    minute: "0"
-    hour: "4"
-    day: "1"
-    job: "docker run --rm --name backup -v '/data:/data' -v '/opt/config/backup/backup.sh:/usr/sbin/backup' base backup > /var/log/backup.log"
