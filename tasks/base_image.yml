@@ -1,9 +1,0 @@
----
-- name: DOCKER - Build 'base' image
-  docker_image:
-    name: base
-    build:
-      path: /opt/config/ansible/dockerfiles/base
-    tag: latest
-    source: build
-...

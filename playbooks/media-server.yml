@@ -1,0 +1,44 @@
+---
+- hosts: all
+
+  vars:
+    pip_install_packages:
+      - name: docker
+
+  roles:
+  - role: arillso.sshd
+    ssh_allow_root_with_key: "no"
+    ssh_server_password_login: false
+    ssh_server_ports: ['1471']
+    ssh_use_dns: false
+
+  - role: geerlingguy.pip
+
+  - role: geerlingguy.docker
+    docker_edition: 'ce'
+    docker_packages:
+      - "docker-{{ docker_edition }}"
+      - "docker-{{ docker_edition }}-cli"
+      - "docker-{{ docker_edition }}-rootless-extras"
+    docker_packages_state: present
+    docker_service_manage: true
+    docker_service_state: started
+    docker_service_enabled: true
+    docker_restart_handler_state: restarted
+
+  - role: stuvusIT.systemd-timesyncd
+    timesync_timezone: America/New_York
+    timesync_write_hwclock_on_change: false
+    timesync_ntp_hosts:
+      - 0.north-america.pool.ntp.org
+      - 1.north-america.pool.ntp.org
+      - 2.north-america.pool.ntp.org
+      - 3.north-america.pool.ntp.org
+
+  - role: base
+
+  - role: containers
+
+  - role: cronjobs
+
+  - role: users

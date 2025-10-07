@@ -1,0 +1,17 @@
+- name: Install zsh
+  package:
+    name: zsh
+    state: present
+
+- name: Install net-tools
+  package:
+    name: net-tools
+    state: present
+
+- name: Allow passwordless sudo for 'sudo' group
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%sudo\tALL'
+    line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
+    validate: '/usr/sbin/visudo -cf %s'

@@ -1,5 +1,4 @@
----
-- name: SYSTEM - Create 'root' user
+- name: root
   user:
     name: "root"
     state: present
@@ -11,7 +10,7 @@
     home: "/root"
     shell: "/bin/zsh"
 
-- name: SYSTEM - Create 'skingry' user
+- name: skingry
   user:
     name: "skingry"
     state: present
@@ -24,7 +23,7 @@
     home: "/home/skingry"
     shell: "/bin/zsh"
 
-- name: SYSTEM - Set authorized key for 'skingry'
+- name: authorized_key - skingry
   authorized_key:
     user: "skingry"
     state: present
