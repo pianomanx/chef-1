@@ -1,0 +1,17 @@
+---
+roles:
+  - name: arillso.sshd
+    src: https://github.com/arillso/ansible.sshd
+    version: "2.2.3"
+
+  - name: geerlingguy.docker
+    src: https://github.com/geerlingguy/ansible-role-docker
+    version: "7.6.0"
+
+  - name: geerlingguy.pip
+    src: https://github.com/geerlingguy/ansible-role-pip
+    version: "3.1.0"
+
+  - name: stuvusIT.systemd-timesyncd
+    src: https://github.com/stuvusIT/ansible_systemd_timesyncd
+    version: master

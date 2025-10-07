@@ -43,12 +43,12 @@
       name: zsh
       state: present
 
-  - name: SYSTEM - Allow passwordless sudo for 'adm' group
+  - name: SYSTEM - Allow passwordless sudo for 'sudo' group
     lineinfile:
       path: /etc/sudoers
       state: present
-      regexp: '^admin'
-      line: '%adm ALL=(ALL) NOPASSWD:ALL'
+      regexp: '^%sudo\tALL'
+      line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
       validate: '/usr/sbin/visudo -cf %s'
 
   - import_tasks: ./tasks/setup_users.yml

@@ -16,5 +16,5 @@
   authorized_key:
     user: "skingry"
     state: present
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFBcaNsSurXN+NspTB1w+KAeSlhka/KVPLCLU/0bUiYZ skingry@carbon\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBygg+NXzn0hXED4m/4mCE36gYtsE42zb0vprTbM9XM4 seth.kingry@LXVNPG6HMH"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBygg+NXzn0hXED4m/4mCE36gYtsE42zb0vprTbM9XM4 skingry@monolith.robotozon.com"
 ...
