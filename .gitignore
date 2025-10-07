@@ -1,0 +1,8 @@
+.dccache
+.DS_Store
+.gitignore
+.idea
+.vscode
+
+collections/*
+galaxy_roles/*

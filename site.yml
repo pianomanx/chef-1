@@ -1,7 +1,5 @@
 ---
-- name: "Do All the Things"
-  hosts: localhost
-  connection: local
+- hosts: all
 
   vars:
     pip_install_packages:
