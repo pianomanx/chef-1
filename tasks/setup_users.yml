@@ -1,9 +1,22 @@
 ---
+- name: SYSTEM - Create 'root' user
+  user:
+    name: "root"
+    state: present
+    comment: "root"
+    password: "$6$0Ky39Ugw6LNOBnlu$gzUZQd5MZ13iyvcn.8KEjSCmfzRzC2x.0KdL/EG7b7MVs8xotPttiJV0050k4w0Zjo64v4SKaxgNFDtEQZ22b/"
+    groups:
+    - "root"
+    create_home: true
+    home: "/root"
+    shell: "/bin/zsh"
+
 - name: SYSTEM - Create 'skingry' user
   user:
     name: "skingry"
     state: present
     comment: "Seth Kingry"
+    password: "$6$AVvk0hcjF.kvvUj7$6f.o/jldY.lm8J.DsRedBRZZTTgnQdOJ6Vx/shb7iNBS.s6E474no8TxGLGQY4rnA8BAs4yq36ERoGbtIMezU."
     groups:
     - "docker"
     - "sudo"
