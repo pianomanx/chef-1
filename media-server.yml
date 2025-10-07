@@ -35,6 +35,12 @@
       - 2.north-america.pool.ntp.org
       - 3.north-america.pool.ntp.org
 
+  - role: systemd-resolved
+    preferred_dns: 192.168.1.1
+    fallback_dns: 8.8.8.8
+    search_domains:
+      - lan
+
   - role: base
 
   - role: containers

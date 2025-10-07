@@ -15,3 +15,7 @@ roles:
   - name: stuvusIT.systemd-timesyncd
     src: https://github.com/stuvusIT/ansible_systemd_timesyncd
     version: master
+
+  - name: systemd-resolved
+    src: https://github.com/ho-ansible/systemd-resolved
+    version: master
