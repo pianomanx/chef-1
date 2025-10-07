@@ -3,7 +3,7 @@
   docker_container:
     name: minecraft
     image: itzg/minecraft-bedrock-server
-    pull: "always"
+    pull: true
     memory: 8192M
     memory_swap: unlimited
     network_mode: host

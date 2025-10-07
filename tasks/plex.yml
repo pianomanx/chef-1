@@ -3,8 +3,8 @@
   docker_container:
     name: plex
     image: plexinc/pms-docker
-    pull: "always"
-    memory: 3072M
+    pull: true
+    memory: 4096M
     memory_swap: unlimited
     network_mode: host
     env:

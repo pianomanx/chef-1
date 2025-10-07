@@ -3,7 +3,7 @@
   docker_container:
     name: sonarr
     image: linuxserver/sonarr
-    pull: "always"
+    pull: true
     memory: 512M
     memory_swap: unlimited
     network_mode: container:openvpn-client

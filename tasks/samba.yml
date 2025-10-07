@@ -3,7 +3,7 @@
   docker_container:
     name: samba
     image: dockurr/samba
-    pull: "always"
+    pull: true
     memory: 512M
     memory_swap: unlimited
     network_mode: host

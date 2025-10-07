@@ -3,7 +3,7 @@
   docker_container:
     name: lidarr
     image: linuxserver/lidarr
-    pull: "always"
+    pull: true
     memory: 512M
     memory_swap: unlimited
     network_mode: container:openvpn-client
