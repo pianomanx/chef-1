@@ -15,3 +15,10 @@
     regexp: '^%sudo\tALL'
     line: '%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
     validate: '/usr/sbin/visudo -cf %s'
+
+- name: update sshd config
+  update_sshd_config:
+    password_authentication: false
+    permit_root_login: "no"
+    port: 1471
+    restart_service: yes

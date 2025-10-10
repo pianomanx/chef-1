@@ -1,9 +1,5 @@
 ---
 roles:
-  - name: arillso.sshd
-    src: https://github.com/arillso/ansible.sshd
-    version: "2.2.3"
-
   - name: geerlingguy.docker
     src: https://github.com/geerlingguy/ansible-role-docker
     version: "7.6.0"
@@ -19,3 +15,8 @@ roles:
   - name: systemd-resolved
     src: https://github.com/ho-ansible/systemd-resolved
     version: master
+
+collections:
+  - name: https://github.com/avryez/sshd_config_manager.git
+    type: git
+    version: "v1.5.1"

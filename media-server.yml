@@ -6,12 +6,6 @@
       - name: docker
 
   roles:
-  - role: arillso.sshd
-    ssh_allow_root_with_key: "no"
-    ssh_server_password_login: false
-    ssh_server_ports: ['1471']
-    ssh_use_dns: false
-
   - role: geerlingguy.pip
 
   - role: geerlingguy.docker
