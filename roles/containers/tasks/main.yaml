@@ -228,6 +228,11 @@
     name: certbot/dns-route53:latest
     source: pull
 
+- name: plexcleaner
+  docker_image:
+    name: ptr727/plexcleaner
+    source: pull
+
 - name: prune
   docker_prune:
     containers: true
