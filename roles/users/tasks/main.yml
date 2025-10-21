@@ -27,5 +27,5 @@
   authorized_key:
     user: "skingry"
     state: present
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGGwKqyMm0zn0X5Cz7P0Jq2WlJ71wZcg3q7wMarnbw12 skingry@carbon\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICXxXNff7rnagGbKPOfABUlmoCOI+Y8q4QQUcj004Ixz seth.kingry@LXVNPG6HMH"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMDTUyoLahekJntWK1Zm+2h60hZ7XbjDX7jYEsnBO/qJ skingry@Carbon\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICXxXNff7rnagGbKPOfABUlmoCOI+Y8q4QQUcj004Ixz seth.kingry@LXVNPG6HMH"
 ...
