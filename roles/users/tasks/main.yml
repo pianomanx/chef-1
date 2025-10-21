@@ -28,4 +28,13 @@
     user: "skingry"
     state: present
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMDTUyoLahekJntWK1Zm+2h60hZ7XbjDX7jYEsnBO/qJ skingry@Carbon\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICXxXNff7rnagGbKPOfABUlmoCOI+Y8q4QQUcj004Ixz seth.kingry@LXVNPG6HMH"
+
+- name: hush login - skingry
+  file:
+    path: "/home/skingry/.hushlogin"
+    owner: "skingry"
+    group: "skingry"
+    access_time: preserve
+    modification_time: preserve
+    state: touch
 ...

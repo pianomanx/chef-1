@@ -8,6 +8,11 @@
     name: net-tools
     state: present
 
+- name: Install neofetch
+  package:
+    name: neofetch
+    state: present
+
 - name: Allow passwordless sudo for 'sudo' group
   lineinfile:
     path: /etc/sudoers
