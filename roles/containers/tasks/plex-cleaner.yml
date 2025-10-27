@@ -1,0 +1,14 @@
+---
+- name: Pull and configure container
+  docker_container:
+    name: plex-cleaner
+    image: nitrikx/plex-cleaner
+    pull: true
+    memory: 256M
+    memory_swap: unlimited
+    env:
+      EXECUTION_CRON_EXPRESSION: "22 */2 * * *"
+    volumes:
+      - /opt/config/plex-cleaner:/config:rw
+      - /data/shares/Media:/media:rw
+    restart_policy: always

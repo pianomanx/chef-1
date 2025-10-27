@@ -1,0 +1,22 @@
+---
+enable_list:
+  - name
+  - no-free-form
+  - fqcn[action-core]
+  - no-changed-when
+exclude_paths:
+  - .git/
+  - .ansible/
+loop_var_prefix: ^(__|item)
+skip_list:
+  - ignore-errors
+  - name[play]
+  - no-handler
+  - yaml[line-length]
+  - fqcn-builtins
+  - schema[playbook]
+  - schema[tasks]
+use_default_rules: true
+warn_list:
+  - var-naming
+  - no-handler

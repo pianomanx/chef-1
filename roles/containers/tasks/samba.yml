@@ -1,0 +1,16 @@
+---
+- name: Pull and configure container
+  docker_container:
+    name: samba
+    image: dockurr/samba
+    pull: true
+    memory: 512M
+    memory_swap: unlimited
+    network_mode: host
+    env:
+      NMBD: "true"
+    volumes:
+      - /data/shares:/shares:rw
+      - /opt/config/samba/smb.conf:/etc/samba/smb.conf:rw
+      - /opt/config/samba/users.conf:/etc/samba/users.conf:rw
+    restart_policy: always

@@ -1,7 +1,10 @@
+.ansible
 .dccache
 .DS_Store
 .gitignore
 .idea
+.vagrant
+.vault_pass
 .vscode
 
 collections/*

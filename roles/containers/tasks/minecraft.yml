@@ -1,0 +1,18 @@
+---
+- name: Pull and configure container
+  docker_container:
+    name: minecraft
+    image: itzg/minecraft-bedrock-server
+    pull: true
+    memory: 8192M
+    memory_swap: unlimited
+    network_mode: host
+    interactive: true
+    tty: true
+    env:
+      GID: "65534"
+      UID: "65534"
+      EULA: "true"
+    volumes:
+      - /opt/config/minecraft:/data:rw
+    restart_policy: always

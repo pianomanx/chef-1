@@ -1,3 +1,4 @@
+---
 - name: root
   user:
     name: "root"
@@ -5,7 +6,7 @@
     comment: "Root User"
     password: "$6$3cgTYm/q1uBehvkE$6aXutnYtPeLy8zexyKj/MXEBrF1N78RMkJT9pfQNvNewbsR7.kcjU1afb6g9fG8BM/WoJteaamKYoWu1T1Lgs."
     groups:
-    - "root"
+      - "root"
     create_home: true
     home: "/root"
     shell: "/bin/zsh"
@@ -17,8 +18,8 @@
     comment: "Seth Kingry"
     password: "$6$GhEhf5/V4n1PRi/8$FFe5jdojDjmFkxB2dV96xUwP1jQ8JNAR64r8Hjt3p6Iq.1btCyOFgMcfd.5Ekbx/0B7/Yyd5dG1Ehip/4deQK0"
     groups:
-    - "docker"
-    - "sudo"
+      - "docker"
+      - "sudo"
     create_home: true
     home: "/home/skingry"
     shell: "/bin/zsh"

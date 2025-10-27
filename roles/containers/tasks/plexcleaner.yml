@@ -1,0 +1,5 @@
+---
+- name: Pull and configure container
+  docker_image:
+    name: ptr727/plexcleaner
+    source: pull

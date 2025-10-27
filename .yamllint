@@ -1,0 +1,24 @@
+---
+extends: default
+ignore:
+  - .ansible
+  - .github
+  - collections
+  - galaxy_roles
+rules:
+  braces:
+    max-spaces-inside: 1
+  comments:
+    min-spaces-from-content: 1
+  comments-indentation: false
+  document-start:
+    level: warning
+  line-length:
+    max: 1000
+    level: warning
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
+  truthy:
+    allowed-values: ['true', 'false']
+    check-keys: false

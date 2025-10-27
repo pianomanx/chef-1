@@ -1,13 +1,12 @@
-- name: Certbot Certficate Renewal
+---
+- name: Pull and configure container
+  docker_image:
+    name: certbot/dns-route53:latest
+    source: pull
+
+- name: Setup cronjob for certificate renewal
   cron:
     name: Certbot Certificate Renewal
     minute: "0"
     hour: "3"
     job: "docker run --rm --name certbot -v '/opt/config/nginx/ssl:/config' -v '/opt/config/aws:/root/.aws' certbot/dns-route53 --config-dir /config renew >> /var/log/certbot.log"
-
-- name: Restart Nginx
-  cron:
-    name: Restart Nginx
-    minute: "15"
-    hour: "3"
-    job: "docker stop nginx && docker start nginx >> /var/log/certbot.log"
