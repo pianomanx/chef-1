@@ -1,0 +1,71 @@
+---
+- name: Apply all the things.
+
+  hosts: all
+
+  vars:
+    pip_install_packages:
+      - name: docker
+
+  collections:
+    - avryez.sshd_config_manager
+
+  tasks:
+    - name: Setup users
+      import_role:
+        name: users
+
+    - name: Apply 'common' role
+      import_role:
+        name: common
+
+    - name: Configure sshd
+      update_sshd_config:
+        password_authentication: false
+        permit_root_login: "no"
+        port: 1471
+        restart_service: true
+
+    - name: Configure Python Pip
+      import_role:
+        name: pip
+
+    - name: Configure Docker
+      import_role:
+        name: docker
+      vars:
+        docker_edition: 'ce'
+        docker_packages:
+          - "docker-{{ docker_edition }}"
+          - "docker-{{ docker_edition }}-cli"
+          - "docker-{{ docker_edition }}-rootless-extras"
+        docker_packages_state: present
+        docker_service_manage: true
+        docker_service_state: started
+        docker_service_enabled: true
+        docker_restart_handler_state: restarted
+
+    - name: Configure systemd-timesyncd
+      import_role:
+        name: systemd-timesyncd
+      vars:
+        timesync_timezone: America/New_York
+        timesync_write_hwclock_on_change: false
+        timesync_ntp_hosts:
+          - 0.north-america.pool.ntp.org
+          - 1.north-america.pool.ntp.org
+          - 2.north-america.pool.ntp.org
+          - 3.north-america.pool.ntp.org
+
+    - name: Configure systemd-resolved
+      import_role:
+        name: systemd-resolved
+      vars:
+        preferred_dns: 192.168.1.1
+        fallback_dns: 8.8.8.8
+        search_domains:
+          - lan
+
+    - name: Configure containers
+      import_role:
+        name: containers
