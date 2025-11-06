@@ -1,7 +1,12 @@
 ---
-- name: Install zsh
+- name: Install gpg
   package:
-    name: zsh
+    name: gpg
+    state: present
+
+- name: Install neofetch
+  package:
+    name: neofetch
     state: present
 
 - name: Install net-tools
@@ -9,9 +14,9 @@
     name: net-tools
     state: present
 
-- name: Install neofetch
+- name: Install zsh
   package:
-    name: neofetch
+    name: zsh
     state: present
 
 - name: Allow passwordless sudo for 'sudo' group
