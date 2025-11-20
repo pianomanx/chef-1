@@ -1,5 +1,23 @@
 ---
 - name: Pull and configure container
-  docker_image:
-    name: ptr727/plexcleaner
-    source: pull
+  docker_container:
+    name: plexcleaner
+    image: ptr727/plexcleaner
+    pull: true
+    memory: 1024M
+    memory_swap: unlimited
+    env:
+      TZ: "America/New_York"
+    user: nobody:nogroup
+    volumes:
+      - /opt/config/plexcleaner:/config:rw
+      - /data/shares/Media:/media:rw
+    restart_policy: always
+    command:
+      - /PlexCleaner/PlexCleaner
+      - monitor
+      - --logfile=/config/PlexCleaner.log
+      - --settingsfile=/config/PlexCleaner.json
+      - --mediafiles=/media/Anime
+      - --mediafiles=/media/Children
+      - --mediafiles=/media/Movies
