@@ -4,8 +4,6 @@
     name: radarr
     image: linuxserver/radarr
     pull: true
-    memory: 512M
-    memory_swap: unlimited
     network_mode: container:openvpn-client
     env:
       PGID: "65534"
