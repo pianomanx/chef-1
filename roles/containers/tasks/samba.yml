@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: samba - pull and configure
   docker_container:
     name: samba
     image: dockurr/samba

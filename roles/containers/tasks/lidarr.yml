@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: lidarr - pull and configure
   docker_container:
     name: lidarr
     image: linuxserver/lidarr

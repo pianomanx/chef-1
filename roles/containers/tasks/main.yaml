@@ -1,62 +1,62 @@
 ---
 - name: openvpn-client
-  include_tasks:
+  import_tasks:
     file: openvpn-client.yml
 
 - name: nzbget
-  include_tasks:
+  import_tasks:
     file: nzbget.yml
 
 - name: lidarr
-  include_tasks:
+  import_tasks:
     file: lidarr.yml
 
 - name: qbittorrent
-  include_tasks:
+  import_tasks:
     file: qbittorrent.yml
 
 - name: radarr
-  include_tasks:
+  import_tasks:
     file: radarr.yml
 
 - name: sonarr
-  include_tasks:
+  import_tasks:
     file: sonarr.yml
 
 - name: samba
-  include_tasks:
+  import_tasks:
     file: samba.yml
 
 - name: makemkv
-  include_tasks:
+  import_tasks:
     file: makemkv.yml
 
 - name: plex
-  include_tasks:
+  import_tasks:
     file: plex.yml
 
 - name: minecraft
-  include_tasks:
+  import_tasks:
     file: minecraft.yml
 
 - name: tautulli
-  include_tasks:
+  import_tasks:
     file: tautulli.yml
 
 - name: nginx
-  include_tasks:
+  import_tasks:
     file: nginx.yml
 
 - name: plex-cleaner
-  include_tasks:
+  import_tasks:
     file: plex-cleaner.yml
 
 - name: certbot
-  include_tasks:
+  import_tasks:
     file: certbot.yml
 
 - name: plexcleaner
-  include_tasks:
+  import_tasks:
     file: plexcleaner.yml
 
 - name: prune

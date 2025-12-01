@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: minecraft - pull and configure
   docker_container:
     name: minecraft
     image: itzg/minecraft-bedrock-server

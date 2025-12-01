@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: plex-cleaner - pull and configure
   docker_container:
     name: plex-cleaner
     image: nitrikx/plex-cleaner

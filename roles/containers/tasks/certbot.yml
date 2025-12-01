@@ -1,10 +1,10 @@
 ---
-- name: Pull and configure container
+- name: certbot - pull and configure
   docker_image:
     name: certbot/dns-route53:latest
     source: pull
 
-- name: Setup cronjob for certificate renewal
+- name: certbot - setup cronjob for certificate renewal
   cron:
     name: Certbot Certificate Renewal
     minute: "0"

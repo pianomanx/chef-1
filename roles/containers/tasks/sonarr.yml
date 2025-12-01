@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: sonarr - pull and configure
   docker_container:
     name: sonarr
     image: linuxserver/sonarr

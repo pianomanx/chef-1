@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: radarr - pull and configure
   docker_container:
     name: radarr
     image: linuxserver/radarr

@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: qbittorrent - pull and configure
   docker_container:
     name: qbittorrent
     image: linuxserver/qbittorrent

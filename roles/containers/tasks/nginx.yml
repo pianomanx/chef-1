@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: Nginx - pull and configure
   docker_container:
     name: nginx
     image: nginx
@@ -22,9 +22,9 @@
       - /data/shares/Downloads:/downloads:rw
     restart_policy: always
 
-- name: Restart Nginx
+- name: nginx - setup cronjob to regularly restart
   cron:
     name: Restart Nginx
     minute: "15"
     hour: "3"
-    job: "docker stop nginx && docker start nginx >> /var/log/certbot.log"
+    job: "docker exec -it nginx nginx -s reload >> /var/log/certbot.log"

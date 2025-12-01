@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: openvpn-client - pull and configure
   docker_container:
     name: openvpn-client
     image: dperson/openvpn-client

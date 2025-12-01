@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: tautulli - pull and configure
   docker_container:
     name: tautulli
     image: linuxserver/tautulli

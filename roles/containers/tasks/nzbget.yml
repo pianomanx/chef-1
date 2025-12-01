@@ -1,5 +1,5 @@
 ---
-- name: Pull and configure container
+- name: nzbget - pull and configure
   docker_container:
     name: nzbget
     image: linuxserver/nzbget
