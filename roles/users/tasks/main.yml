@@ -30,12 +30,6 @@
     state: present
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMDTUyoLahekJntWK1Zm+2h60hZ7XbjDX7jYEsnBO/qJ skingry@Carbon"
 
-- name: SSH Key - skingry@LXVNPG6HMH
-  authorized_key:
-    user: "skingry"
-    state: present
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICXxXNff7rnagGbKPOfABUlmoCOI+Y8q4QQUcj004Ixz seth.kingry@LXVNPG6HMH"
-
 - name: SSH Key - skingry@iPad
   authorized_key:
     user: skingry
