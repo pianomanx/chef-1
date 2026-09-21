@@ -8,6 +8,7 @@
     env:
       PGID: "65534"
       PUID: "65534"
+      UMASK: "002"
     volumes:
       - /opt/config/qbittorrent:/config:rw
       - /data/shares/Downloads:/downloads:rw
